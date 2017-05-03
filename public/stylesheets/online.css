@@ -1,0 +1,16 @@
+.bg-color{
+    background-color: #009cda;
+}
+.content-padding{
+    padding-top: 0px;
+}
+.content-left{
+    text-align: left;
+}
+.content-right{
+    text-align: right;
+}
+
+.error{
+    border-color: #dd514c!important;
+}

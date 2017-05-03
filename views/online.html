@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="/assets/css/amazeui.css">
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="stylesheet" href="/stylesheets/online.css">
+</head>
+<body>
+<div class="page">
+    <header data-am-widget="header" class="am-header am-header-default am-header-fixed">
+        <div class="am-header-left am-header-nav">
+            <a href="#left-link" class="" style="color: #000000">
+                <%=user.nickName%>
+                <i class="am-header-icon"></i>
+            </a>
+        </div>
+        <h1 class="am-header-title">
+            在线
+        </h1>
+
+        <div class="am-header-right am-header-nav" id="user_click">
+            <a href="#user_list_box" data-am-offcanvas>
+                <i class="am-header-icon am-icon-bars"></i>
+            </a>
+        </div>
+    </header>
+    <div class="am-with-fixed-header content-padding">
+        <ul class="am-comments-list am-comments-list-flip" id="content_box">
+        </ul>
+    </div>
+    <div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default "
+         id="">
+        <div class="am-g">
+            <div class="am-u-sm-10"><input class="am-form-field am-input-lg" type="text" placeholder="" id="content">
+            </div>
+            <div class="am-u-sm-2">
+                <button type="button" id="btn-send" data-code="<%=user.id%>" data-value="<%=user.nickName%>"
+                        class="am-btn am-btn-default am-btn-lg am-btn-block">发送
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 侧边栏内容 -->
+<div id="user_list_box" class="am-offcanvas">
+    <div class="am-offcanvas-bar am-offcanvas-bar-flip">
+        <div class="am-offcanvas-content">
+            <h1 id="user_num">在线列表:</h1>
+            <ul class="am-list" id="user_list">
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<script src="/javascripts/jquery/jquery-1.7.1.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/javascripts/chat.js"></script>
+<script src="/assets/js/amazeui.js"></script>
+</body>
+</html>

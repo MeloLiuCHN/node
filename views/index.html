@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"
+          name="viewport">
+    <title></title>
+
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css"/>
+
+    <script src="/javascripts/jquery/jquery-1.7.1.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/javascripts/chat.js"></script>
+</head>
+<body>
+<div id="chatbox">
+    <div style="background:#D13737;height: 28px; width: 100%;font-size:12px;position: fixed;clear:both;">
+        <div style="line-height: 28px;color:#fff;">
+            <span style="text-align:left;margin-left:10px;"><%=user.nickName%></span>
+                    <span style="float:right; margin-right:10px;"><span id="showusername"></span> | 
+					<!--<a href="javascript:;" style="color:#fff;">退出</a></span>-->
+        </div>
+    </div>
+    <div id="doc" style="margin-top: 28px;">
+        <div id="chat">
+            <div id="message" style="width: 79.9%;min-height:500px;float: left;border-right: 2px solid #999;" class="message">
+                <div id="onlinecount"
+                     style="background:#EFEFF4; font-size:12px; margin-top:10px; margin-left:10px; color:#666;">
+                </div>
+            </div>
+
+            <div style="width: 20%;float: left;min-height:500px;">
+                <ul id="user_list">
+                </ul>
+            </div>
+
+            <div class="input-box">
+                <div class="input">
+                    <input type="text" maxlength="140" placeholder="请输入聊天内容，按Ctrl提交" id="content" name="content">
+                </div>
+                <div class="action">
+                    <button type="button" id="mjr_send" data-code="<%=user.id%>" data-value="<%=user.nickName%>">提交
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>

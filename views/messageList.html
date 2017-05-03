@@ -1,0 +1,30 @@
+<%  if(contentList==null){return;} %>
+<%  contentList.forEach(function(content){ %>
+<% $class = "";  %>
+<% $text_algin = "";%>
+<% $img_url = ""; %>
+<% if (content.userid == user.id) { %>
+<% $class = " am-comment-flip am-comment-danger"; %>
+<% $text_algin = " content-right";  %>
+<% $img_url = "/images/1.jpg"; %>
+<% } else { %>
+<% $class = " am-comment-highlight"; %>
+<% $img_url = "/images/2.jpg"; %>
+
+<% } %>
+<% $user_id = content.userid; %>
+<li class="am-comment  <%=$class%>">
+    <a href="users/myhome?uid=<%=$user_id%>"><img src="<%=$img_url%>" alt="" class="am-comment-avatar" width="48" height="48"></a>
+
+    <div class="am-comment-main">
+        <header class="am-comment-hd">
+            <div class="am-comment-meta  <%=$text_algin%>">
+                <time style="margin-right: 10px;" datetime="2015-03-21"><%=dateUtils.dateFormat(content.addTime)%></time>
+                <a href="" class="am-comment-author"><%=content.nickName
+                    %></a>
+            </div>
+        </header>
+        <div class="am-comment-bd  content-right"><p><a href=""></a> <%=content.content %></p></div>
+    </div>
+</li>
+<% });%>
